@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Factura Proforma</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="sheet">
+    <section class="top">
+      <div class="logo-box">
+        <img id="logo_img" alt="Logo" />
+      </div>
+      <div class="empresa">
+        <div class="empresa-nome" id="empresa_nome_view">F.M Sistema e Tecnologia</div>
+        <div>NIF: <span id="empresa_nif_view">5002181096</span></div>
+        <div><span id="empresa_tel_view">+244946320180</span></div>
+        <div><span id="empresa_email_view">fmsistemaetecnologia@gmail.com</span></div>
+        <div><span id="empresa_end_view">Estrada lar do patriota rua 15</span></div>
+      </div>
+    </section>
+
+    <section class="title">
+      <h1>Factura Proforma <span id="doc_num_view">PP 2025/7</span></h1>
+    </section>
+
+    <section class="row meta">
+      <div class="cliente">
+        <div class="label">Exmo (s) Senhor (es)</div>
+        <div class="value" id="cli_nome_view">Sr Fernandes</div>
+        <div class="label">NIF:</div>
+        <div class="value" id="cli_nif_view">Consumidor Final</div>
+        <div class="value" id="cli_tel_view">+244 926867107</div>
+        <div class="value" id="cli_end_view">Moro bento</div>
+      </div>
+      <div class="docinfo">
+        <div><span>DATA DE EMISSÃO</span><strong id="doc_emissao_view">09-09-2025</strong></div>
+        <div><span>DATA DE EXP</span><strong id="doc_exp_view">16-09-2025</strong></div>
+        <div><span>VENDEDOR</span><strong id="doc_vendedor_view">Admin</strong></div>
+        <div><span>OBSERVAÇÕES</span><strong id="doc_obs_view">-</strong></div>
+      </div>
+    </section>
+
+    <section class="table card">
+      <table id="itens_table">
+        <thead>
+          <tr>
+            <th class="col-ref">REF</th>
+            <th class="col-desc">DESCRIÇÃO</th>
+            <th class="col-qtd">QTD</th>
+            <th class="col-prec">PR. UNITÁRIO</th>
+            <th class="col-disc">DSC. %</th>
+            <th class="col-taxa">TAXA %</th>
+            <th class="col-tot">TOTAL</th>
+          </tr>
+        </thead>
+        <tbody id="itens_tbody"></tbody>
+      </table>
+    </section>
+
+    <section class="row summary">
+      <div class="resumo card">
+        <h3>RESUMO DE IMPOSTOS</h3>
+        <table class="mini">
+          <thead>
+            <tr><th>DESC</th><th>TAXA %</th><th>B. INCIDÊNCIA</th><th>V. IMPOSTO</th><th>SUMÁRIO</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="tax_desc_view">Isento</td>
+              <td id="tax_taxa_view">0.00</td>
+              <td id="tax_base_view">0.00</td>
+              <td id="tax_valor_view">0.00</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="sumario card">
+        <h3>SUMÁRIO</h3>
+        <div class="sum-line"><span>Total ilíquido:</span><strong id="sum_iliquido_view">Kz 0,00</strong></div>
+        <div class="sum-line"><span>Desconto Financeiro:</span><strong id="desconto_fin_view">Kz 0,00</strong></div>
+        <div class="sum-line"><span>Total de impostos(IVA):</span><strong id="sum_impostos_view">Kz 0,00</strong></div>
+        <div class="total-pagar"><span>TOTAL A PAGAR</span><strong id="sum_total_view">KZ 0,00</strong></div>
+      </div>
+    </section>
+
+    <section class="coords card">
+      <h3>COORDENADAS BANCÁRIAS</h3>
+      <div class="coord-line"><span id="banco_nome_view">BFA- Banco de Fomento Angola</span></div>
+      <div class="coord-line"><span id="banco_modalidade_view">Caixa</span></div>
+      <div class="coord-line"><span id="banco_iban_view">AO06.0006.0000.7420.9788.3018.5</span></div>
+      <div class="coord-line"><span id="banco_titular_view">Bruno Franco Martins</span></div>
+    </section>
+
+    <footer class="rodape">
+      abZB-Processado Por Programa Validado nº 371/AGT/2022 DEXA CONTAS
+      <span class="pagina">1 de 1</span>
+    </footer>
+  </main>
+
+  <aside class="panel">
+    <h2>Editar & Enviar</h2>
+
+    <div class="group">
+      <h3>Logo</h3>
+      <label>Carregar arquivo (PNG/JPG)
+        <input id="logo_file" type="file" accept="image/*">
+      </label>
+      <label>Ou URL do logo
+        <input id="logo_url" placeholder="https://.../logo.png">
+      </label>
+      <button id="btnLogoURL">Usar URL</button>
+      <button id="btnLogoReset">Limpar logo</button>
+    </div>
+
+    <div class="group">
+      <h3>Empresa</h3>
+      <label>Nome <input id="empresa_nome" value="F.M Sistema e Tecnologia"></label>
+      <label>NIF <input id="empresa_nif" value="5002181096"></label>
+      <label>Telefone <input id="empresa_tel" value="+244946320180"></label>
+      <label>E-mail <input id="empresa_email" type="email" value="fmsistemaetecnologia@gmail.com"></label>
+      <label>Endereço <input id="empresa_end" value="Estrada lar do patriota rua 15"></label>
+    </div>
+
+    <div class="group">
+      <h3>Documento</h3>
+      <label>Número <input id="doc_num" value="PP 2025/7"></label>
+      <label>Emissão <input id="doc_emissao" type="date"></label>
+      <label>Expiração <input id="doc_exp" type="date"></label>
+      <label>Vendedor <input id="doc_vendedor" value="Admin"></label>
+      <label>Observações <input id="doc_obs" placeholder="-"></label>
+    </div>
+
+    <div class="group">
+      <h3>Cliente</h3>
+      <label>Nome <input id="cli_nome" value="Sr Fernandes"></label>
+      <label>NIF <input id="cli_nif" value="Consumidor Final"></label>
+      <label>Telefone (WhatsApp, com DDI) <input id="cli_tel" value="244926867107"></label>
+      <label>Endereço <input id="cli_end" value="Moro bento"></label>
+      <label>E-mail do cliente <input id="cli_email" type="email" placeholder="cliente@exemplo.com"></label>
+      <label>E-mail em cópia (CC) <input id="cli_cc" type="email" placeholder="meuemail@exemplo.com"></label>
+    </div>
+
+    <div class="group">
+      <h3>Itens</h3>
+      <div id="itens_form"></div>
+      <button id="add_item">+ Adicionar item</button>
+    </div>
+
+    <div class="group">
+      <h3>Totais</h3>
+      <label>Desconto financeiro <input id="desconto_fin" type="number" step="0.01" value="0"></label>
+      <label>Imposto (IVA) - valor <input id="tax_valor" type="number" step="0.01" value="0"></label>
+    </div>
+
+    <div class="group">
+      <h3>Impostos</h3>
+      <label>Descrição <input id="tax_desc" value="Isento"></label>
+      <label>Taxa % <input id="tax_taxa" type="number" step="0.01" value="0"></label>
+      <label>Base de incidência <input id="tax_base" type="number" step="0.01" value="0"></label>
+    </div>
+
+    <div class="group">
+      <h3>Banco</h3>
+      <label>Banco <input id="banco_nome" value="BFA- Banco de Fomento Angola"></label>
+      <label>Modalidade <input id="banco_modalidade" value="Caixa"></label>
+      <label>IBAN/Conta <input id="banco_iban" value="AO06.0006.0000.7420.9788.3018.5"></label>
+      <label>Titular <input id="banco_titular" value="Bruno Franco Martins"></label>
+    </div>
+
+    <div class="group actions">
+      <button id="btnPrint">Gerar PDF/Imprimir</button>
+      <button id="btnWhats">Enviar WhatsApp</button>
+      <button id="btnEmail">Enviar por E-mail</button>
+      <button id="btnExport">Exportar JSON</button>
+      <button id="btnImport">Importar JSON</button>
+      <input id="fileImport" type="file" accept="application/json" hidden>
+    </div>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>

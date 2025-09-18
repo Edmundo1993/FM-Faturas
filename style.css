@@ -1,0 +1,50 @@
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;background:#f4f4f4;color:#111}
+:root{--line:#d8d8d8;--muted:#6d6d6d;--title:#2b2b2b}
+.sheet{width:900px;margin:24px auto 140px;background:#fff;padding:28px 36px 48px;border:1px solid #eee}
+.top{display:flex;gap:24px;align-items:flex-start}
+.logo-box{width:180px;height:180px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.logo-box img{max-width:100%;max-height:100%;display:block}
+.empresa{margin-left:auto;text-align:right;line-height:1.5}
+.empresa .empresa-nome{font-weight:700}
+.title{margin:22px 0}
+.title h1{margin:0;font-size:22px;color:var(--title)}
+.title h1 span{font-weight:700}
+.row{display:flex;gap:16px}
+.meta{margin:12px 0 18px}
+.cliente{flex:1}
+.cliente .label{color:var(--muted);font-size:12px;margin-top:2px}
+.cliente .value{font-size:14px}
+.docinfo{width:280px;margin-left:auto}
+.docinfo>div{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #f1f1f1}
+.docinfo span{color:var(--muted);font-size:12px;text-transform:uppercase}
+.docinfo strong{font-size:13px}
+.card{border:1px solid var(--line);border-radius:4px;padding:0}
+.table table{width:100%;border-collapse:collapse}
+.table thead th{background:#f2f2f2;border-bottom:1px solid var(--line);font-size:12px;color:#333;padding:10px 8px;text-align:left}
+.table tbody td{border-bottom:1px solid #f4f4f4;padding:8px 8px;font-size:13px;vertical-align:top}
+.col-qtd,.col-prec,.col-disc,.col-taxa,.col-tot{text-align:right}
+.col-ref{width:60px}.col-qtd{width:60px}.col-prec,.col-tot{width:120px}.col-disc,.col-taxa{width:80px}.col-desc{width:auto}
+.summary{margin-top:12px;gap:16px}
+.resumo{flex:2;padding:0}
+.resumo h3,.sumario h3,.coords h3{margin:0;background:#f2f2f2;padding:10px 12px;border-bottom:1px solid var(--line);font-size:12px;color:#333}
+.resumo table{width:100%;border-collapse:collapse}
+.resumo th,.resumo td{border-bottom:1px solid #f4f4f4;padding:8px 8px;font-size:12px}
+.sumario{flex:1;padding:0 0 8px}
+.sumario .sum-line{display:flex;justify-content:space-between;padding:8px 12px;border-bottom:1px solid #f4f4f4;font-size:13px}
+.total-pagar{display:flex;justify-content:space-between;align-items:center;margin:14px 12px;padding:12px;border:2px solid #000;font-weight:700}
+.coords{margin-top:12px}
+.coord-line{padding:8px 12px;border-bottom:1px solid #f4f4f4;font-size:13px}
+.rodape{margin-top:18px;color:#666;font-size:11px;display:flex;justify-content:space-between}
+.panel{position:fixed;right:12px;top:12px;bottom:12px;width:330px;background:#fff;border:1px solid #e5e5e5;border-radius:10px;padding:14px 14px 72px;overflow:auto;box-shadow:0 6px 30px rgba(0,0,0,.08)}
+.panel h2{margin:0 0 8px;font-size:18px}
+.panel .group{border-top:1px dashed #eee;padding-top:10px;margin-top:8px}
+.panel h3{margin:6px 0 8px;font-size:13px;color:#333}
+label{display:flex;flex-direction:column;gap:6px;font-size:12px;color:#444}
+input{border:1px solid #d0d0d0;border-radius:8px;padding:8px 10px;font-size:14px}
+#itens_form .item{display:grid;grid-template-columns:90px 1fr 70px 110px 80px 80px 28px;gap:6px;margin-bottom:6px}
+#itens_form .item input{width:100%}
+button{border:1px solid #111;background:#111;color:#fff;border-radius:8px;padding:9px 12px;font-size:14px;cursor:pointer}
+.actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+#add_item{margin-top:6px}
+@media print{.panel{display:none}body{background:#fff}.sheet{margin:0;border:none;width:auto;padding:24px 28px}}
